@@ -2,11 +2,10 @@ package state
 
 import (
 	"bytes"
+	"github.com/mesos/mesos-go/upid"
 	"net"
 	"strconv"
 	"strings"
-
-	"github.com/mesos/mesos-go/upid"
 )
 
 // Resources holds resources as defined in the /state.json Mesos HTTP endpoint.
@@ -85,7 +84,7 @@ type Task struct {
 	Resources     `json:"resources"`
 	DiscoveryInfo DiscoveryInfo `json:"discovery"`
 
-	SlaveIP string `json:"-"`
+	SlaveIP string  `json:"-"`
 	Labels  []Label `json:"labels,omitempty"`
 }
 
@@ -254,8 +253,8 @@ type DiscoveryInfo struct {
 	Location    string `json:"location,omitempty"`
 	Environment string `json:"environment,omitempty"`
 	Labels      struct {
-		Labels []Label `json:"labels"`
-	} `json:"labels"`
+			    Labels []Label `json:"labels"`
+		    } `json:"labels"`
 	Ports Ports `json:"ports"`
 }
 
