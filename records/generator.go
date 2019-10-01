@@ -216,7 +216,7 @@ func (rg *RecordGenerator) loadFromMaster(ip string, port string) (state.State, 
 	u := url.URL{
 		Scheme: "http",
 		Host:   net.JoinHostPort(ip, port),
-		Path:   "/master/state.json",
+		Path:   "/master/state",
 	}
 
 	req, err := http.NewRequest("GET", u.String(), nil)
